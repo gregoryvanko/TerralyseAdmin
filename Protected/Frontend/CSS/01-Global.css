@@ -1,0 +1,450 @@
+/*
+CSS de la vue Dashboard
+*/
+.DashboardElement{
+	margin: 1%; 
+	padding: 1%;
+    width: 28%; 
+    height: 150px; 
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.DashboardElementDivImg{
+    height: 100px;
+}
+
+.DashboardElementImg{
+    max-width: 100%;
+    position: relative;
+    max-height: 100%;
+
+}
+
+.DashboardElementTitre{
+	font-size: 2vw;
+}
+
+.DashboardElementValue{
+	width: 50%; 
+	font-size: 3vw;
+}
+
+.DashboardChart{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	margin: 1%; 
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.ct-chart .ct-line {
+	stroke: rgb(178,214,38);
+	stroke-width: 2px;
+}
+
+.ct-chart .ct-point {
+	stroke: rgb(178,214,38);
+	stroke-width: 10px;
+}
+
+/*
+CSS de la vue Controller
+*/
+.ControllerOrderElement{
+	margin: 1% 5% 1% 5%; 
+	padding: 1%;
+	border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.ControllerOrderElement:hover{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.ControllerOrderElementA{
+	width: 30%;
+}
+
+.ControllerOrderElementB{
+	width: 70%;
+}
+
+.ControllerOrderElementTitre{
+	text-align: right; 
+	margin: 0% 1% 0% 1%; 
+	width: 30%;
+}
+
+.ControllerOrderElementValue{
+	text-align: left; 
+	margin: 0% 1% 0% 1%; 
+	width: 70%;
+	word-wrap: break-word;
+}
+
+.ControllerDataDiv{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.ControllerButton{
+	width: 20%;
+}
+
+/*
+CSS de la vue InfoOrder
+*/
+.InfoOrderInput {
+    width: 25%;
+    font-size: 2vw;
+    padding: 10px;
+    border: solid 1px rgb(178,214,38);
+    transition: box-shadow 0.3s, border 0.3s;
+    margin: 2% 0px 2% 0px;
+}
+.InfoOrderInput:focus,
+.InfoOrderInput.focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+}
+
+.InfoOrderDataDiv{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.InfoOrderElementTitre{
+	text-align: right; 
+	margin: 0% 1% 0% 1%; 
+	width: 30%;
+}
+
+.InfoOrderElementValue{
+	text-align: left; 
+	margin: 0% 1% 0% 1%;  
+	width: 70%;
+	word-wrap: break-word;
+}
+
+.InfoOrderListElement{
+	width: 50%;
+	margin: 1% auto 1% auto; 
+	padding: 1%;
+	border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.InfoOrderListElement:hover{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.InfoOrderBoxResultat{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	margin-top: 3%;
+	text-align: left;
+	max-width: 700px
+}
+
+.InfoOrderBoxResultatCellTitre{
+	padding: 2%;
+	text-align: center;
+	font-weight: bold;
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: black;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: black;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: black;
+}
+
+.InfoOrderBoxResultatCell{
+	padding: 2%;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: black;
+}
+
+.InfoOrderBoxResultatCellEnd{
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: black;
+}
+
+/*
+CSS de la vue Labo
+*/
+.LaboInput {
+    width: 25%;
+    font-size: 2vw;
+    padding: 10px;
+    border: solid 1px rgb(178,214,38);
+    transition: box-shadow 0.3s, border 0.3s;
+    margin: 2% 0px 2% 0px;
+}
+.LaboInput:focus,
+.LaboInput.focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+}
+
+.LaboDataDiv{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.LaboElementTitre{
+	text-align: right; 
+	margin: 0% 1% 0% 1%; 
+	width: 30%;
+}
+
+.LaboElementValue{
+	text-align: left; 
+	margin: 0% 1% 0% 1%;  
+	width: 70%;
+	word-wrap: break-word;
+}
+
+.LaboBoxResultat{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	margin-top: 3%;
+	text-align: left;
+	max-width: 700px
+}
+
+.LaboBoxResultatCellTitre{
+	padding: 2%;
+	text-align: center;
+	font-weight: bold;
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: black;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: black;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: black;
+}
+
+.LaboBoxResultatCell{
+	padding: 2%;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: black;
+}
+
+.LaboBoxResultatCellEnd{
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: black;
+}
+
+.LaboInputResult{
+	width:100%; 
+	font-size: 1.5vw;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+.LaboInputResult:focus,
+.LaboInputResult.focus {
+    border: solid 2px red;
+}
+
+.LaboButton{
+	width: 20%;
+}
+
+.LaboDataElement{
+	width: 40%;
+	margin: 2% auto 2% auto; 
+	padding: 1%;
+	border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.LaboDataElement:hover{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.LaboDataElementTitre{
+	text-align: right; 
+	margin: 0% 1% 0% 1%; 
+	width: 50%;
+}
+
+.LaboDataElementValue{
+	text-align: left; 
+	margin: 0% 1% 0% 1%; 
+	width: 50%;
+	word-wrap: break-word;
+}
+
+@media screen and (max-width: 700px)
+{
+	/*
+	CSS de la vue Dashboard
+	*/
+	.DashboardElement{
+		width: 40%;
+	    height: 90px; 
+	}
+
+	.DashboardElementDivImg{
+	    height: 60px;
+	}
+
+	.DashboardElementTitre{
+		font-size: 4vw;
+	}
+
+	.DashboardElementValue{
+		font-size: 5vw;
+	}
+
+	.DashboardChart{
+		width: 90%;
+	}
+
+	/*
+	CSS de la vue Controller
+	*/
+	.ControllerOrderElementA{
+		width: 100%;
+	}
+
+	.ControllerOrderElementB{
+		width: 100%;
+	}
+
+	.ControllerButton{
+		width: 70%;
+	}
+
+	/*
+	CSS de la vue InfoOrder
+	*/
+	.InfoOrderInput {
+        font-size: 4vw;
+        width: 50%;
+    }
+
+    .InfoOrderListElement{
+		width: 90%;
+	}
+
+	.InfoOrderBoxResultat{
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+
+	.InfoOrderBoxResultatCellTitre{
+		font-size: 3vw;
+	}
+
+	.InfoOrderBoxResultatCell{
+		font-size: 3vw;
+	}
+
+	/*
+	CSS de la vue Labo
+	*/
+	.LaboInput {
+        font-size: 4vw;
+        width: 50%;
+    }
+
+    .LaboBoxResultat{
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+
+	.LaboBoxResultatCellTitre{
+		font-size: 3vw;
+	}
+
+	.LaboBoxResultatCell{
+		font-size: 3vw;
+	}
+
+	.LaboInputResult{
+		font-size: 2.5vw;
+	}
+
+	.LaboButton{
+		width: 70%;
+	}
+
+	.LaboDataElement{
+		width: 80%;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+}
+
+@media screen and (min-width: 1200px)
+{
+	/*
+	CSS de la vue Dashboard
+	*/
+	.DashboardElementTitre{
+		font-size: 28px;
+	}
+	.DashboardElementValue{
+		font-size: 38px;
+	}
+
+	/*
+	CSS de la vue Controller
+	*/
+
+	/*
+	CSS de la vue InfoOrder
+	*/
+	.InfoOrderInput {
+        font-size: 28px;
+    }
+
+    /*
+	CSS de la vue Labo
+	*/
+	.LaboInput {
+        font-size: 28px;
+    }
+
+    .LaboInputResult{
+		font-size: 18px;
+	}
+}

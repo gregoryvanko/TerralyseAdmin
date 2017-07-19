@@ -1,0 +1,18 @@
+{
+	"UserLogin" : [
+		{ "Login": "Greg", "Password": "GregP", "Groupe": "Admin" },
+		{ "Login": "Labo", "Password": "LaboP", "Groupe": "Labo" }
+	],
+	"Groupe" : [
+		{"Name": "Admin", "Type": "All", "FilesJs": [], "FilesCss": [], "FilesImg": []},
+		{"Name": "Labo", "Type": "Only", "FilesJs": ["04-VueLabo"], "FilesCss": ["01-Global"], "FilesImg": ["IconeVueLabo"]},
+		{"Name": "Test", "Type": "Exept", "FilesJs": ["04-VueLabo", "02-VueController"], "FilesCss": [], "FilesImg": ["IconeVueLabo", "IconeVueDashboard"]}
+	],
+	"AppFiles" : "Protected/Frontend",
+	"ProtectedPHPFile" : "Protected/Backend/WebService.php",
+	"SQLConfig" : [
+		{ "ConfigName": "ConfigLocalhost", "Server": "localhost", "Login": "root", "Password": "root", "DB": "Terralyse" },
+		{ "ConfigName": "ConfigDebian", "Server": "localhost", "Login": "root", "Password": "gregory", "DB": "Terralyse" },
+		{ "ConfigName": "ConfigOVH", "Server": "terralysat1.mysql.db", "Login": "terralysat1", "Password": "Gregoryvk99", "DB": "terralysat1" }
+	]
+}

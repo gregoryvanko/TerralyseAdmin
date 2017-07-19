@@ -1,0 +1,181 @@
+/*
+* Couleurs de l'application
+*/
+.BackgroundColor{
+    background-color: rgb(178,214,38);
+}
+
+.Color{
+    color: rgb(178,214,38);
+}
+
+.BorderColor{
+    border-color: rgb(178,214,38);
+}
+
+/*
+* Body de l'application
+*/
+body{
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;   
+    -khtml-user-select: none;    
+    -moz-user-select: none;      
+    -ms-user-select: none;      
+    user-select: none;  
+    cursor: default;
+    font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+}
+
+/*
+* Titre principal de l'application
+*/
+#Titre{
+	margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 5vw;
+    border-bottom-style: solid;
+}
+
+/*
+* SousTitre de l'application
+*/
+.SubTitre1{
+    margin: 1%;
+    text-align: left;
+    font-size: 3vw;
+}
+
+/*
+* Message d'erreur de l'application
+*/
+.Error{
+    color: red;
+    font-size: 2vw;
+}
+
+/*
+* Boutton de base de l'application
+*/
+.MyButton{
+    margin: 2% 0% 2% 0%;
+    padding: 6px;
+    cursor: pointer;
+    border: 2px solid rgb(44,1,21);
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 2vw;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    color: rgb(44,1,21);
+}
+
+.MyButton:hover{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/*
+* Boutton rond de l'application
+*/
+.MyRondButton{
+    padding: 6px;
+    cursor: pointer;
+    border: 2px solid rgb(44,1,21);
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    font-size: 1vw;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    color: rgb(44,1,21);
+}
+
+.MyRondButton:hover{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/*
+* Box du login de l'application
+*/
+#BoxLogin{
+    width: 40%;
+    border: 2px solid rgb(178,214,38);
+    border-radius: 15px;
+    text-align: center;
+    margin: 0px auto 0px auto;
+    box-shadow: 0px 0px 5px grey;
+    background-color: white;
+}
+
+/*
+* Type Input du login
+*/
+.LoginInput {
+    width: 70%;
+    font-size: 2vw;
+    padding: 10px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+    margin: 2% 0px 2% 0px;
+}
+.LoginInput:focus,
+.LoginInput.focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+}
+
+@media screen and (max-width: 700px)
+{
+	#Titre{
+	    font-size: 8vw;
+	}
+    .SubTitre1{
+        font-size: 6vw;
+    }
+    #BoxLogin{
+        width: 90%;
+    }
+    .LoginInput {
+        font-size: 4vw;
+    }
+    .Error{
+	    font-size: 4vw;
+	}
+	.MyButton{
+        font-size: 6vw;
+    }
+
+    .MyRondButton{
+        font-size: 4vw;
+    }
+}
+
+@media screen and (min-width: 1200px)
+{
+    #Titre{
+        font-size: 60px;
+    }
+    .SubTitre1{
+        font-size: 30px;
+    }
+	#BoxLogin{
+        max-width: 500px;
+    }
+    .LoginInput {
+        font-size: 28px;
+    }
+    .Error{
+        font-size: 28px;
+    }
+    .MyButton{
+        font-size: 28px;
+    }
+
+    .MyRondButton{
+        font-size: 20px;
+    }
+}

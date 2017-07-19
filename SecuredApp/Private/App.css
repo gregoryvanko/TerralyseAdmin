@@ -1,0 +1,228 @@
+#AppContent{
+    height: auto;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.PageMenu{
+    left: 0px;
+}
+
+.ActionMenu{
+    right: 0px;
+}
+
+.CommandButton{
+    position: fixed;
+    top: 0px;
+    font-size: 2vw;
+    float: left;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 4px;
+    margin: 4px;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    cursor: pointer;
+}
+
+.CommandButton:hover,
+.CommandButton:active{
+    opacity: 1;
+}
+
+#ScreenOverlay{
+    display: block;
+    opacity: .8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #E6E6E6;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#InputScreen{
+    display: block;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    max-width: 1000px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+
+.DivWitheSpace{
+    height: 25px;
+}
+
+.CanvasMenuWindow{
+    width: 70%;
+    margin: 0px auto 0px auto;
+    display: -webkit-flex; 
+    -webkit-flex-flow: column wrap; 
+    display: flex; 
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 1%;
+}
+
+.CanvasMenuWindowRowSpaceAround{
+    display: -webkit-flex; 
+    -webkit-flex-flow: row wrap; 
+    display: flex; 
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.PageButton{
+    margin: 1%; 
+    width: 22%; 
+    height: 200px; 
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    cursor: pointer;
+}
+
+.PageButton:hover{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.PageButtonTitre{
+    font-size: 2vw;
+}
+
+.ImgHomeScreen{
+    max-width: 100%;
+    position: relative;
+    left: 50%;
+    margin-left: -100%;
+    height: 140px;
+}
+
+.FlexColumn{
+    display: flex; 
+    flex-direction: column;
+}
+
+.FlexRow{
+    display: flex; 
+    flex-direction: row;
+}
+
+.FlexRowToColumn{
+    display: flex; 
+    flex-direction: row;
+}
+
+.FlexAlignItemCenter{
+    align-items: center;
+}
+
+.FlexAlignItemStretch{
+    align-items: stretch;
+}
+
+.FlexWrap{
+    flex-wrap: wrap;
+}
+
+.FlexContentStart{
+    justify-content: flex-start;
+}
+
+.FlexContentEnd{
+    justify-content: flex-end;
+}
+
+.FlexContentCenter{
+    justify-content: center;
+}
+
+.FlexContentSpaceBetween{
+    justify-content: space-between;
+}
+
+.FlexContentSpaceAround{
+    justify-content: space-around;
+}
+
+.FlexAlignContentStart{
+    align-content: flex-start;
+}
+
+.FlexAlignContentEnd{
+    align-content: flex-end;
+}
+
+.FlexAlignContentCenter{
+    align-content: center;
+}
+
+.FlexAlignContentSpaceBetween{
+    align-content: space-between;
+}
+
+.FlexAlignContentSpaceAround{
+    align-content: space-around;
+}
+
+@media screen and (max-width: 700px)
+{
+    #AppContent{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .CommandButton{
+        font-size: 6vw;
+    }
+
+    #InputScreen{
+        width: 90%;
+    }
+
+    .DivWitheSpace{
+        height: 20px;
+    }
+    .PageButton{
+        width: 44%; 
+    }
+
+    .PageButtonTitre{
+        font-size: 4vw;
+    }
+
+    .FlexRowToColumn{
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1200px)
+{   
+    #AppContent{
+        max-width: 1050px;
+    }
+    .CommandButton{
+        font-size: 28px;
+    }
+    .PageButtonTitre{
+        font-size: 24px;
+    }
+}
