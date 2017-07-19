@@ -50,7 +50,7 @@ function GetTemplateLogin(Titre) {
 		'<div class="Color" style="margin: 1%; font-size: 5vw;">' + Titre + '</div>' +
 		'<div style="height: 25px;"></div>' +
 		'<div id="BoxLogin">' +
-    		'<div style="height: 25px;"></div>'+
+    		'<div style="height: 25px;">test</div>'+
     		'<input id="LoginValue" class="LoginInput" type="text" name="LoginValue" placeholder="Login" autofocus onkeyup="InputKeyUp(event)" tabindex="1"> <br>' +
     		'<input id="PswValue" class="LoginInput" type="password" name="PswValue" placeholder="Password" onkeyup="InputKeyUp(event)" tabindex="2"> <br>' +
     		'<div id="ErrorMsg" class="Error"></div>' +
