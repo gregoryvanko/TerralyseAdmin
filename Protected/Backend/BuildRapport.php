@@ -125,7 +125,7 @@ function GeneratePage1TableGraph($Appreciation)
 	$StyleGraph = 'style="font-size:7px; padding:1px; width: 20%;"';
 
 	$message = '
-		<table style="width: 90%; border-collapse: collapse;">
+		<table style="width: 90%; border-collapse: collapse; margin:4px;">
 		    <tr>
 		    	<td bgcolor="#FF0000" '. $StyleGraph. '>Tres Faible</td>
 			    <td bgcolor="#FFA500" '. $StyleGraph. '>Faible</td>
