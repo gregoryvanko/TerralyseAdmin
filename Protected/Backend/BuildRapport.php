@@ -133,14 +133,23 @@ function GeneratePage1TableGraph($Appreciation)
 			    <td bgcolor="#FFA500" '. $StyleGraph. '>Elevé</td>
 			    <td bgcolor="#FF0000" '. $StyleGraph. '>Tres Elevé</td>
 		    </tr>
-		    <tr>
-			    <td style="color: rgb(122,92,106);">&#9650</td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-		    </tr>
+		    '. GeneratePage1TableGraphValue($Appreciation) .'
 		</table>
+	';
+	return $message;
+}
+
+function GeneratePage1TableGraphValue($Appreciation)
+{
+	// ToDo : modifier l'endroit de l'indicateur en fonction de l'appréciation (1à5)
+	$message = '
+	    <tr style="color: rgb(122,92,106);">
+		    <td></td>
+		    <td>&#9650</td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+	    </tr>
 	';
 	return $message;
 }

@@ -6,7 +6,7 @@ $filePath = '../../Protected/Backend/TempFiles/';
 if( isset($_GET["FileName"])) {
 	$filename = $_GET["FileName"] . ".pdf";
 } else {
-	$filename = 'TempRapport1.pdf';
+	$filename = 'TempRapport.pdf';
 }
 
 

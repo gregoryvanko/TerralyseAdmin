@@ -605,7 +605,7 @@ function GeneratePdfResultat($OrderId)
 
 	
 	$GenerationDone = false;
-	$FileName ="../../Protected/Backend/TempFiles/TempRapport1.pdf";
+	$FileName ="../../Protected/Backend/TempFiles/TempRapport.pdf";
 	
 	// Si un fichier existe on le detruit
 	if (file_exists($FileName)) {

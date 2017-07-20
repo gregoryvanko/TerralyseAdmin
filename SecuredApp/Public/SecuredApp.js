@@ -185,31 +185,33 @@ function SendToServer(fct, data, CallbackFct, CallServiceTimeOut){
     }
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    xhr.onreadystatechange=function() {
-        if (xhr.readyState===4){
-            if (xhr.status === 200){
-                var reponse = xhr.responseText;
+    //xhr.onreadystatechange=function() {
+    xhr.onload=function() {
+        if ((xhr.readyState===4) || (xhr.status === 200)){
+            var reponse = xhr.responseText;
 
-                if (IsJson(reponse)) {
-                    var Process = JSON.parse(reponse);
-                    if (Process.MessageID != "AllSources") {
-                        console.log(Process.Message);
-                    }
-                    if (!data.IsValid && Process.MessageID == "ErrorNotValidUser"){
-                        sessionStorage.setItem("Token","");
-                        IndexStart();
-                    } else {
-                        CallbackFct(Process);
-                    }
+            if (IsJson(reponse)) {
+                var Process = JSON.parse(reponse);
+                if (Process.MessageID != "AllSources") {
+                    console.log(Process.Message);
+                }
+                if (!data.IsValid && Process.MessageID == "ErrorNotValidUser"){
+                    sessionStorage.setItem("Token","");
+                    IndexStart();
                 } else {
-                    //alert("Reponse not Json");
-                    //console.log(reponse);
-                    document.body.innerHTML = reponse;
+                    CallbackFct(Process);
                 }
             } else {
-                alert( "Unexpected error:\nStatus Code: " + xhr.status + "\nStatus texte: " + xhr.statusText + "\nResponseURL: " + xhr.responseURL);
+                //alert("Reponse not Json");
+                //console.log(reponse);
+                document.body.innerHTML = reponse;
             }
+        } else {
+                alert( "Unexpected error !\nReadyState Code: " + xhr.readyState + "\nStatus Code: " + xhr.status + "\nStatus texte: " + xhr.statusText + "\nResponseURL: " + xhr.responseURL);
         }
+    };
+    xhr.onerror=function() {
+        alert( "Unexpected error: onerror fct\nReadyState Code: " + xhr.readyState + "\nStatus Code: " + xhr.status + "\nStatus texte: " + xhr.statusText + "\nResponseURL: " + xhr.responseURL);
     };
     xhr.timeout = 20000;
     xhr.ontimeout = CallServiceTimeOut;
