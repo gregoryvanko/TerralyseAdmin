@@ -212,7 +212,6 @@ function GeneratePage2TableResultat($Data)
 	foreach ($Analyse->AvisFumure as $value) {
 		$message= $message . GeneratePage2TableResultatElement($value);
 	}
-
 	return $message;
 }
 
