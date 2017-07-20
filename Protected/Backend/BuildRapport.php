@@ -1,5 +1,5 @@
 <?php 
-// Page 0 du resultat d analyse
+// Page 0 du resultat de l analyse
 function GeneratePage0($Data)
 {
 	$message = '
