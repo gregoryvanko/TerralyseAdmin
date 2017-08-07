@@ -121,7 +121,6 @@ function TemplateLaboDataEchantillon(Data) {
 	return reponse;
 }
 
-
 function TemplateLaboDataResult(Data) {
 	var reponse = '' +
 		'<div class="SubTitre1 Color">Résultat</div>' +
@@ -130,15 +129,15 @@ function TemplateLaboDataResult(Data) {
 			'<div class="LaboBoxResultat">' +
 				'<div class="FlexRow FlexContentSpaceAround" style="width:100%;">' +
 					'<div class="LaboBoxResultatCellTitre" style="width:21%;">' + 'Element' + '</div>' +
-					'<div class="LaboBoxResultatCellTitre" style="width:16%;">' + 'Teneur' + '</div>' +
-					'<div class="LaboBoxResultatCellTitre" style="width:44%;">' + 'Appréciation' + '</div>' +
+					'<div class="LaboBoxResultatCellTitre" style="width:30%;">' + 'Teneur' + '</div>' +
+					'<div class="LaboBoxResultatCellTitre" style="width:30%;">' + 'Appréciation' + '</div>' +
 					'<div class="LaboBoxResultatCellTitre" style="width:19%; border-right-style: solid; border-right-width: 1px; border-right-color: black;">' + 'Référence' + '</div>' +
 				'</div>' +
 				TemplateLaboResultElement(Data.ElementsAnalyse) +
 				'<div class="FlexRow FlexContentSpaceAround" style="width:100%;">' +
 					'<div class="LaboBoxResultatCellEnd" style="width:21%;">' + '</div>' +
-					'<div class="LaboBoxResultatCellEnd" style="width:16%;">' + '</div>' +
-					'<div class="LaboBoxResultatCellEnd" style="width:44%;">' + '</div>' +
+					'<div class="LaboBoxResultatCellEnd" style="width:30%;">' + '</div>' +
+					'<div class="LaboBoxResultatCellEnd" style="width:30%;">' + '</div>' +
 					'<div class="LaboBoxResultatCellEnd" style="width:19%;">' + '</div>' +
 				'</div>' +
 			'</div>' +
@@ -166,16 +165,39 @@ function TemplateLaboDataResult(Data) {
 	return reponse;
 }
 
+
 function TemplateLaboResultElement(Data) {
 	var reponse = '';
 	for (var C in Data){
 		reponse = reponse + 
 		'<div class="FlexRow FlexContentSpaceAround" style="width:100%;">' +
 			'<div class="LaboBoxResultatCell" style="width:21%;">' + Data[C].Nom + '<br> (' + Data[C].Unite + ')' + '</div>' +
-			'<div class="LaboBoxResultatCell" style="width:16%;"> <input onChange="LaboInputResultOnChange();" onkeyup="LaboInputResultKeyUp(event, this)" onClick="LaboInputResultOnClick(this)" class="LaboInputResult" type="text" id="'+ C + 'Teneur' + '" value="' + Data[C].Teneur + '"></div>' +
-			'<div class="LaboBoxResultatCell" style="width:44%;"> <input onChange="LaboInputResultOnChange();" onkeyup="LaboInputResultKeyUp(event, this)" onClick="LaboInputResultOnClick(this)" class="LaboInputResult" type="text" id="'+ C + 'Appreciation' + '" value="' + Data[C].Appreciation + '"></div>' +
+			'<div class="LaboBoxResultatCell" style="width:30%;"> <input onChange="LaboInputResultOnChange();" onkeyup="LaboInputResultKeyUp(event, this)" onClick="LaboInputResultOnClick(this)" class="LaboInputResult" type="text" id="'+ C + 'Teneur' + '" value="' + Data[C].Teneur + '"></div>' +
+			'<div class="LaboBoxResultatCell" style="width:30%;">'+ TemplateLaboResultElementDropDownAppreciation(C + 'Appreciation', Data[C].Appreciation) + '</div>' +
 			'<div class="LaboBoxResultatCell" style="width:19%; border-right-style: solid; border-right-width: 1px; border-right-color: black;"> <input onChange="LaboInputResultOnChange();" onkeyup="LaboInputResultKeyUp(event, this)" onClick="LaboInputResultOnClick(this)" class="LaboInputResult" type="text" id="'+ C + 'Reference' + '" value="' + Data[C].Reference + '"></div>' +
 		'</div>';
+	}
+	return reponse;
+}
+
+function TemplateLaboResultElementDropDownAppreciation(Id, Value) {
+	var reponse = '' +
+	'<select id="' + Id + '" class="LaboDropDown" onChange="LaboInputResultOnChange();">' +
+		'<option value="0" '+ TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, 0) +'>To Do</option>' +
+		'<option value="1" '+ TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, 1) +'>Très faible</option>' +
+		'<option value="2" '+ TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, 2) +'>Faible</option>' +
+		'<option value="3" '+ TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, 3) +'>Normal</option>' +
+		'<option value="4" '+ TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, 4) +'>Elevé</option>' +
+		'<option value="5" '+ TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, 5) +'>Très Elevé</option>' +
+	'</select>' +
+	'';
+	return reponse;
+}
+
+function TemplateLaboResultElementDropDownAppreciationSelectedValue(Value, Data) {
+	var reponse = '';
+	if (Value == Data) {
+		reponse = 'selected';
 	}
 	return reponse;
 }

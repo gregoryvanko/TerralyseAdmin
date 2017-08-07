@@ -40,7 +40,7 @@ function GeneratePage1($Data)
     <body style="margin: 10px; font-size:12px;">
     	<img src="../../Protected/Backend/IMG/Logo.png" alt="Logo" height="50" style="margin-bottom: 1%;">
     	<div style="text-align: center; padding:1%; margin-left: auto; margin-right: auto; font-size:30px; color: rgb(122,92,106); border-style: solid; border-color: rgb(122,92,106); border-top-width: 1px; border-bottom-width: 2px;">
-    		Bulletin d’analyse chimique de terre
+    		Bulletin d’analyses chimiques de terre
     	</div>
 
     	<div style="width: 95%; margin-left: auto; margin-right: auto;">
@@ -124,33 +124,49 @@ function GeneratePage1TableGraph($Appreciation)
 {
 	$StyleGraph = 'style="font-size:7px; padding:1px; width: 20%;"';
 
-	$message = '
-		<table style="width: 90%; border-collapse: collapse; margin:4px;">
-		    <tr>
-		    	<td bgcolor="#FF0000" '. $StyleGraph. '>Tres Faible</td>
-			    <td bgcolor="#FFA500" '. $StyleGraph. '>Faible</td>
-			    <td bgcolor="#00FF00" '. $StyleGraph. '>Normal</td>
-			    <td bgcolor="#FFA500" '. $StyleGraph. '>Elevé</td>
-			    <td bgcolor="#FF0000" '. $StyleGraph. '>Tres Elevé</td>
-		    </tr>
-		    '. GeneratePage1TableGraphValue($Appreciation) .'
-		</table>
-	';
+	if ($Appreciation == 0) {
+		$message = 'Non définit';
+	} else {
+		$message = '
+			<table style="width: 90%; border-collapse: collapse; margin:4px;">
+			    <tr>
+			    	<td bgcolor="#FF0000" '. $StyleGraph. '>Très Faible</td>
+				    <td bgcolor="#FFA500" '. $StyleGraph. '>Faible</td>
+				    <td bgcolor="#00FF00" '. $StyleGraph. '>Normal</td>
+				    <td bgcolor="#FFA500" '. $StyleGraph. '>Elevé</td>
+				    <td bgcolor="#FF0000" '. $StyleGraph. '>Très Elevé</td>
+			    </tr>
+			    '. GeneratePage1TableGraphValue($Appreciation) .'
+			</table>
+		';
+	}
+	
 	return $message;
 }
 
 function GeneratePage1TableGraphValue($Appreciation)
 {
-	// ToDo : modifier l'endroit de l'indicateur en fonction de l'appréciation (1à5)
-	$message = '
-	    <tr style="color: rgb(122,92,106);">
-		    <td></td>
-		    <td>&#9650</td>
-		    <td></td>
-		    <td></td>
-		    <td></td>
-	    </tr>
-	';
+	// $message = '
+	//     <tr style="color: rgb(122,92,106);">
+	// 	    <td></td>
+	// 	    <td>&#9650</td>
+	// 	    <td></td>
+	// 	    <td></td>
+	// 	    <td></td>
+	//     </tr>
+	// ';
+
+	$message = '<tr style="color: rgb(122,92,106);">';
+
+	for ($i=1; $i <=5; $i++) { 
+		if ($Appreciation == $i) {
+			$message .= '<td>&#9650</td>';
+		} else {
+			$message .= '<td></td>';
+		}
+	}
+	
+	$message .= '</tr>';
 	return $message;
 }
 
@@ -182,12 +198,9 @@ function GeneratePage2($Data)
 			  	</tr>
 			  	'. GeneratePage2TableResultat($Data->Resultat) .'
 	    	</table>
-	    	<div '. $StyleTitre. '>
-	    		Recommandations du laboratoire
-	    	</div>
-	    	<div style="margin-bottom: 2%;">
-	    		'.GeneratePage2RecomLabo($Data->Resultat).'
-	    	</div>
+
+	    	'.GeneratePage2RecomLabo($Data->Resultat, $StyleTitre).'
+	    	
 	    	<div '. $StyleTitre. '>
 	    		Information sur le choix de vos engrais
 	    	</div>
@@ -195,7 +208,11 @@ function GeneratePage2($Data)
 	    		Les engrais sont caractérisés par leur composition en Azote, Phosphore et Potasse (valeur N/P/K) représentée sous forme de 3 chiffres (pourcentage du mélange).
 	    		<br>Les engrais "triples" sont constitués de ces trois éléments. Les engrais "simples" ne sont constitués que d\'un seul de ces trois composants. Les engrais "triples" ou "simples" peuvent facilement se trouver en jardinerie.
 	    		<br>Prenons l\'exemple d\'un engrais organique ayant une composition N-P-K de 6-3-12. Cet engrais dit "triple" est donc composé de 6% d\'Azote, de 3% de Phosphore et 12% de Potasse. Dans un sac de 750g de cet engrais, il y a 45g d\'Azote (6% de 750g = 45g), 22,5g de Phosphore(3% de 750g = 22,5g) et 90g de Potasse (12% de 750g = 90g).
-	    		<br><br>Pour plus de conseils, n\'hésitez pas à consulter notre site web WWW.Terralyse.com
+	    		<br><br>Pour plus de conseils, n\'hésitez pas à consulter notre site web www.Terralyse.com
+	    	</div>
+	    	<div style="height: 25px;"></div>
+	    	<div style="width: 95%; font-size:16px; color: rgb(122,92,106); text-align: right;">
+	    		L\'équipe Terralyse
 	    	</div>
     	</div>
     </body>
@@ -229,9 +246,24 @@ function GeneratePage2TableResultatElement($Data)
 	return $message;
 }
 
-function GeneratePage2RecomLabo($Data)
+function GeneratePage2RecomLabo($Data, $StyleTitre)
 {
 	$Analyse = json_decode($Data);
-	$message= urldecode($Analyse->AvisTexte);
+	$Themessage= urldecode($Analyse->AvisTexte);
+
+	if ($Themessage != ' ') {
+		$message = '
+			<div '. $StyleTitre. '>
+	    		Recommandations du laboratoire
+	    	</div>
+	    	<div style="margin-bottom: 2%;">
+	    		'.$Themessage.'
+	    	</div>
+		';
+	} else {
+		$message = '';
+	}
+	
+	
 	return $message;
 }

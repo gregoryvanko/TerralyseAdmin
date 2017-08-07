@@ -550,7 +550,7 @@ function BuildElementAnalyseArray()
 	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Azote org.", "‰N"));
 	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Phosphore", "mg/100g"));
 	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Potassium", "mg/100g"));
-	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Magnésium", "mg/100g"));
+	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Magnésium", "mg/100g"));
 	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Calcium", "mg/100g"));
 	array_push($ArryElementAnalyse,BuildElementAnalyseTemplate("Sodium", "mg/100g"));
 
@@ -564,7 +564,7 @@ function BuildElementAnalyseTemplate($Nom, $Unite)
 	$Element->Nom = $Nom;
 	$Element->Unite = $Unite;
 	$Element->Teneur = "0";
-	$Element->Appreciation = "Bon";
+	$Element->Appreciation = "0"; // 0=undef, 1=TrésFaible, 2=Faible, 3=Normal, 4=Elevé, 5=Très elevé
 	$Element->Reference = "0";
 
 	return $Element;
@@ -577,7 +577,7 @@ function BuildAvisFumureArray()
 	array_push($ArryAvisFumure,BuildAvisFumureTemplate("Azote (N)"));
 	array_push($ArryAvisFumure,BuildAvisFumureTemplate("Phosphore (P2O5)"));
 	array_push($ArryAvisFumure,BuildAvisFumureTemplate("Potasse (K2O)"));
-	array_push($ArryAvisFumure,BuildAvisFumureTemplate("Magnésium (MgO)"));
+	array_push($ArryAvisFumure,BuildAvisFumureTemplate("Magnésium (MgO)"));
 	array_push($ArryAvisFumure,BuildAvisFumureTemplate("Soufre (SO3)"));
 
 	return $ArryAvisFumure;

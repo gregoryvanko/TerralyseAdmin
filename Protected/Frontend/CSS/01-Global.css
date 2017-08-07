@@ -312,6 +312,17 @@ CSS de la vue Labo
 	word-wrap: break-word;
 }
 
+.LaboDropDown{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
 @media screen and (max-width: 700px)
 {
 	/*
@@ -412,6 +423,10 @@ CSS de la vue Labo
 		margin-top: 5%;
 		margin-bottom: 5%;
 	}
+
+	.LaboDropDown{
+		font-size: 2.5vw;
+	}
 }
 
 @media screen and (min-width: 1200px)
@@ -445,6 +460,10 @@ CSS de la vue Labo
     }
 
     .LaboInputResult{
+		font-size: 18px;
+	}
+
+	.LaboDropDown{
 		font-size: 18px;
 	}
 }
